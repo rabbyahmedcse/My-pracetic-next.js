@@ -1,16 +1,22 @@
+'use client'
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React from 'react';
 
 const Navbar = () => {
+    const pathname = usePathname();
+
+
+
 const links =<>
-<li><Link href="/docs">Docs</Link></li>
-<li><Link href="/showcase">ShowCase</Link></li>
-<li><Link href="/about">About</Link></li>
-<li><Link href="/about/developer">Developer</Link></li>
-<li><Link href="/blogs">Blogs</Link></li>
-<li><Link href="/dashboard">DashBoard</Link></li>
-<li><Link href="/users">User</Link></li>
-<li><Link href="/post">Post</Link></li>
+<li><Link className={pathname ==='/docs' ?'text-blue-400':''} href="/docs">Docs</Link></li>
+<li><Link className={pathname==='/showcase'?"text-blue-400":''} href="/showcase">ShowCase</Link></li>
+<li><Link className={pathname==='/about'?'text-blue-400':''} href="/about">About</Link></li>
+<li><Link className={pathname==='/about/developer'?'text-blue-400':''} href="/about/developer">Developer</Link></li>
+<li><Link className={pathname==='/blogs'?'text-blue-400':''} href="/blogs">Blogs</Link></li>
+<li><Link className={pathname==='/dashboard'?'text-blue-400':''} href="/dashboard">DashBoard</Link></li>
+<li><Link className={pathname==='/users'?'text-blue-400':''} href="/users">User</Link></li>
+<li><Link className={pathname==='/post'?'text-blue-400':''} href="/post">Post</Link></li>
 
 </>
 
